@@ -2,13 +2,13 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Plano interactivo de una casa</title>
+<title>Plano interactivo de casa</title>
 
 <style>
 
 body{
     font-family: Arial;
-    background: linear-gradient(135deg,#4facfe,#00f2fe);
+    background:#1e1e2f;
     text-align:center;
     color:white;
 }
@@ -17,78 +17,41 @@ h1{
     margin:20px;
 }
 
-/* plano */
+/* contenedor del plano */
 
 .plano{
-    width:600px;
-    height:400px;
-    margin:auto;
     position:relative;
-    background:#eee;
-    border:5px solid #333;
+    width:800px;
+    margin:auto;
 }
 
-/* habitaciones */
+.plano img{
+    width:100%;
+    border-radius:10px;
+}
 
-.habitacion{
+/* zonas clicables */
+
+.zona{
     position:absolute;
-    border:2px solid #333;
+    border:2px solid rgba(255,255,255,0.4);
     cursor:pointer;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-weight:bold;
-    color:#333;
     transition:all 0.3s;
 }
 
-/* animacion */
+/* animación */
 
-.habitacion:hover{
-    background:#ffd54f;
-    transform:scale(1.05);
+.zona:hover{
+    background:rgba(255,255,0,0.3);
+    transform:scale(1.03);
 }
 
-/* habitaciones posiciones */
-
-.sala{
-    width:300px;
-    height:200px;
-    top:0;
-    left:0;
-    background:#c8e6c9;
-}
-
-.cocina{
-    width:300px;
-    height:200px;
-    top:0;
-    right:0;
-    background:#ffe0b2;
-}
-
-.dormitorio{
-    width:300px;
-    height:200px;
-    bottom:0;
-    left:0;
-    background:#bbdefb;
-}
-
-.baño{
-    width:300px;
-    height:200px;
-    bottom:0;
-    right:0;
-    background:#f8bbd0;
-}
-
-/* panel info */
+/* panel información */
 
 .info{
     margin-top:20px;
-    background:rgba(0,0,0,0.4);
     padding:15px;
+    background:#333;
     width:400px;
     margin-left:auto;
     margin-right:auto;
@@ -100,39 +63,39 @@ h1{
 
 <body>
 
-<h1>Plano interactivo de una casa</h1>
+<h1>Plano interactivo</h1>
 
 <div class="plano">
 
-<div class="habitacion sala" onclick="mostrar('Sala','Lugar para descansar y ver televisión.')">
-Sala
-</div>
+<img src="plano.jpg">
 
-<div class="habitacion cocina" onclick="mostrar('Cocina','Lugar donde se preparan los alimentos.')">
-Cocina
-</div>
+<!-- sala -->
+<div class="zona" style="top:50px; left:60px; width:200px; height:150px;"
+onclick="mostrar('Sala','Aquí está la sala principal de la casa.')"></div>
 
-<div class="habitacion dormitorio" onclick="mostrar('Dormitorio','Habitación para dormir y descansar.')">
-Dormitorio
-</div>
+<!-- cocina -->
+<div class="zona" style="top:50px; left:300px; width:200px; height:150px;"
+onclick="mostrar('Cocina','Lugar donde se preparan los alimentos.')"></div>
 
-<div class="habitacion baño" onclick="mostrar('Baño','Lugar para higiene personal.')">
-Baño
-</div>
+<!-- dormitorio -->
+<div class="zona" style="top:220px; left:60px; width:200px; height:150px;"
+onclick="mostrar('Dormitorio','Habitación para descansar.')"></div>
+
+<!-- baño -->
+<div class="zona" style="top:220px; left:300px; width:120px; height:120px;"
+onclick="mostrar('Baño','Espacio para higiene personal.')"></div>
 
 </div>
 
 <div class="info" id="info">
-Haz clic en una habitación del plano
+Haz clic en una parte del plano
 </div>
 
 <script>
 
 function mostrar(titulo,texto){
-
 document.getElementById("info").innerHTML =
 "<h2>"+titulo+"</h2><p>"+texto+"</p>";
-
 }
 
 </script>
