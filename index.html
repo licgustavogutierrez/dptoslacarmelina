@@ -71,8 +71,8 @@ h1{
 
 <!-- sala -->
 <div class="zona" style="top:50px; left:60px; width:150px;height:150px;"
-onclick="mostrar('Cochera','Dispone de dos coches.')"></div>
-
+onclick="mostrarCochera('Cochera','Dispone de dos coches.')"></div>
+    
 <!-- cocina -->
 <div class="zona" style="top:50px; left:300px; width:200px; height:150px;"
 onclick="mostrar('Cocina','Lugar donde se preparan los alimentos.')"></div>
@@ -96,6 +96,14 @@ Haz clic en una parte del plano
 function mostrar(titulo,texto){
 document.getElementById("info").innerHTML =
 "<h2>"+titulo+"</h2><p>"+texto+"</p>";
+}
+
+</script>
+    <script>
+
+function mostrarCochera(titulo,texto){
+document.getElementById("info").innerHTML =
+"<h2>"+titulo+"</h2><p>"+texto+" img src="cohcera.jpg"</p>";
 }
 
 </script>
