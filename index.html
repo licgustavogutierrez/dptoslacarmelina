@@ -2,60 +2,70 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<title>Plano interactivo de casa</title>
+<title>Puntos animados</title>
 
 <style>
 
 body{
-    font-family: Arial;
     background:#1e1e2f;
-    text-align:center;
-    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
 }
 
-h1{
-    margin:20px;
-}
+/* contenedor */
 
-/* contenedor del plano */
-
-.plano{
+.mapa{
     position:relative;
-    width:800px;
-    margin:auto;
+    width:600px;
 }
 
-.plano img{
+/* imagen */
+
+.mapa img{
     width:100%;
-    border-radius:10px;
 }
 
-/* zonas clicables */
+/* punto */
 
-.zona{
+.punto{
     position:absolute;
-    border:2px solid rgba(255,255,255,0.4);
+    width:20px;
+    height:20px;
+    background:red;
+    border-radius:50%;
     cursor:pointer;
-    transition:all 0.3s;
 }
 
 /* animación */
 
-.zona:hover{
-    background:rgba(255,255,0,0.3);
-    transform:scale(1.03);
+.punto::after{
+    content:"";
+    position:absolute;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:red;
+    animation:pulse 1.5s infinite;
 }
 
-/* panel información */
+@keyframes pulse{
 
-.info{
-    margin-top:20px;
-    padding:15px;
-    background:#333;
-    width:400px;
-    margin-left:auto;
-    margin-right:auto;
-    border-radius:10px;
+0%{
+transform:scale(1);
+opacity:0.8;
+}
+
+70%{
+transform:scale(3);
+opacity:0;
+}
+
+100%{
+opacity:0;
+}
+
 }
 
 </style>
@@ -63,50 +73,15 @@ h1{
 
 <body>
 
-<h1>Plano interactivo</h1>
+<div class="mapa">
 
-<div class="plano">
+<img src="mapa.jpg">
 
-<img src="plano.jpg">
-
-<!-- sala -->
-<div class="zona" style="top:50px; left:60px; width:150px;height:150px;"
-onclick="mostrarCochera('Cochera','Dispone de dos coches.')"></div>
-    
-<!-- cocina -->
-<div class="zona" style="top:50px; left:300px; width:200px; height:150px;"
-onclick="mostrar('Cocina','Lugar donde se preparan los alimentos.')"></div>
-
-<!-- dormitorio -->
-<div class="zona" style="top:220px; left:60px; width:200px; height:150px;"
-onclick="mostrar('Dormitorio','Habitación para descansar.')"></div>
-
-<!-- baño -->
-<div class="zona" style="top:220px; left:300px; width:120px; height:120px;"
-onclick="mostrar('Baño','Espacio para higiene personal.')"></div>
+<div class="punto" style="top:120px; left:200px;"></div>
+<div class="punto" style="top:200px; left:350px;"></div>
+<div class="punto" style="top:300px; left:150px;"></div>
 
 </div>
-
-<div class="info" id="info">
-Haz clic en una parte del plano
-</div>
-
-<script>
-
-function mostrar(titulo,texto){
-document.getElementById("info").innerHTML =
-"<h2>"+titulo+"</h2><p>"+texto+"</p>";
-}
-
-</script>
-    <script>
-
-function mostrarCochera(titulo,texto){
-document.getElementById("info").innerHTML =
-"<h2>"+titulo+"</h2><p>"+texto+" img src="cohcera.jpg"</p>";
-}
-
-</script>
 
 </body>
 </html>
