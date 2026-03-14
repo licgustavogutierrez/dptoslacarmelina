@@ -6,6 +6,13 @@
 
 <style>
 
+
+
+
+
+    
+
+    
 body{
     background:#1e1e2f;
     display:flex;
@@ -68,6 +75,41 @@ opacity:0;
 
 }
 
+
+.titulo{
+    font-family: Arial, sans-serif;
+    font-size:70px;
+    color:#ffffff;
+    text-align:center;
+    animation:brillo 3s infinite alternate;
+}
+
+/* animación de sombra */
+
+@keyframes brillo{
+
+0%{
+text-shadow:
+0 0 5px #fff,
+0 0 10px #4facfe,
+0 0 20px #4facfe;
+}
+
+100%{
+text-shadow:
+0 0 15px #fff,
+0 0 30px #00f2fe,
+0 0 60px #00f2fe;
+}
+
+}
+
+
+
+
+
+
+    
 </style>
 </head>
 
@@ -76,10 +118,10 @@ opacity:0;
 <div class="mapa">
 
 <img src="plano.jpg">
-
+<h1 class="titulo">Departamentos en La Carmelina</h1>
 <div class="punto" style="top:100px; left:100px;"></div>
 <div class="punto" style="top:100px; left:250px;"></div>
-<div class="punto" style="top:100px; left:350px;"></div>
+<div class="punto" style="top:100px; left:320px;"></div>
 
 </div>
 
