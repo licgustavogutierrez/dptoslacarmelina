@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Carrusel de Imágenes</title>
+
+<style>
+
+body{
+    font-family: Arial;
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* contenedor */
+
+.carrusel{
+    position:relative;
+    width:600px;
+    height:350px;
+    overflow:hidden;
+    border-radius:10px;
+}
+
+/* imágenes */
+
+.carrusel img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    position:absolute;
+    opacity:0;
+    transition:opacity 1s;
+}
+
+.carrusel img.activa{
+    opacity:1;
+}
+
+/* botones */
+
+.boton{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    background:rgba(0,0,0,0.5);
+    color:white;
+    border:none;
+    font-size:25px;
+    padding:10px;
+    cursor:pointer;
+}
+
+.prev{
+    left:10px;
+}
+
+.next{
+    right:10px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="carrusel">
+
+<img src="https://picsum.photos/600/350?1" class="activa">
+<img src="https://picsum.photos/600/350?2">
+<img src="https://picsum.photos/600/350?3">
+<img src="https://picsum.photos/600/350?4">
+
+<button class="boton prev" onclick="anterior()">❮</button>
+<button class="boton next" onclick="siguiente()">❯</button>
+
+</div>
+
+<script>
+
+let index = 0;
+const imagenes = document.querySelectorAll(".carrusel img");
+
+function mostrarImagen(){
+imagenes.forEach(img => img.classList.remove("activa"));
+imagenes[index].classList.add("activa");
+}
+
+function siguiente(){
+index++;
+if(index >= imagenes.length) index = 0;
+mostrarImagen();
+}
+
+function anterior(){
+index--;
+if(index < 0) index = imagenes.length - 1;
+mostrarImagen();
+}
+
+/* cambio automático */
+
+setInterval(siguiente,3000);
+
+</script>
+
+</body>
+</html>
