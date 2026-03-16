@@ -1,1 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Goliat Construye</title>
 
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#141414;
+color:white;
+}
+
+/* barra superior */
+
+.header{
+display:flex;
+align-items:center;
+padding:15px 30px;
+background:#000;
+}
+
+.logo{
+font-size:28px;
+color:red;
+font-weight:bold;
+margin-right:40px;
+}
+
+.menu a{
+color:white;
+margin-right:20px;
+text-decoration:none;
+font-size:16px;
+}
+
+/* portada */
+
+.hero{
+height:50vh;
+/*background: img src:carmelin.jpg;
+background-image: url("")  center/cover no-repeat;*/
+/*background:url("https://github.com/licgustavogutierrez/dptoslacarmelina/blob/main/carmelina.jpg") center/cover no-repeat;*/
+background: url("carmelina.jpg")   center/cover no-repeat;  
+display:flex;
+flex-direction:column;
+justify-content:center;
+padding-left:60px;
+}
+
+.hero h1{
+font-size:60px;
+}
+
+.hero p{
+width:400px;
+margin-top:10px;
+}
+
+.hero button{
+margin-top:15px;
+padding:10px 20px;
+border:none;
+font-size:18px;
+cursor:pointer;
+margin-right:10px;
+}
+
+/* filas */
+
+.titulo{
+margin:20px 30px;
+font-size:24px;
+}
+
+.fila{
+display:flex;
+overflow-x:auto;
+padding:20px;
+}
+
+.fila::-webkit-scrollbar{
+display:none;
+}
+
+/* tarjetas */
+
+.card{
+min-width:220px;
+margin-right:10px;
+transition:transform 0.3s;
+}
+
+.card img{
+width:100%;
+border-radius:6px;
+}
+
+.card:hover{
+transform:scale(1.1);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<div class="logo">Goliat</div>
+<div class="menu">
+<a href="index.html">Inicio</a>
+<a href="#">El Barrio</a>
+<a href="elproyecto.html">El Proyecto</a>
+<a href="#">Mi lista</a>
+</div>
+</div>
+
+<!-- portada -->
+
+<div class="hero">
+<h1 style="background-color:Tomato;">Venta de Dptos en Pozo - El Proyecto </h1>
+
+<div>
+<button>▶ Reproducir</button>
+<button>+ Mi lista</button>
+</div>
+</div>
+
+<!-- fila 1 -->
+
+<h2 class="titulo">El Proyecto</h2>
+Se basa en dos departamentos en el lote K13 del Barrio La Carmelina Club de Campo con una superficie total de 417 m2. 
+Cada departamento cuenta con un terreno de 208,5 m2 y con 98,3 m2 cubierto y 30 m2 de cochera.  
+
+<h2 class="titulo">Cochera:</h2>
+
+
+
+</body>
+</html>  
